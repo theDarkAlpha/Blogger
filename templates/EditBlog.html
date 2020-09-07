@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card-body">
+        <h2> Edit Post</h2>
+        <hr>
+        <form action="" method="post" > {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
