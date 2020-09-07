@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for post in object_list %}
+
+<div class="card">
+    <div class="card-body">
+        <h2><a href="{% url 'BlogPage'  post.pk %}" > {{ post.title }} </a></h2>
+        <hr>
+        <p>
+            {{ post.body }}
+        </p>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
