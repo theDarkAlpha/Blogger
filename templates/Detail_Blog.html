@@ -1,15 +1,25 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-    <div class="card-body">
-        <h2> {{ object.title }}</h2>
-        <hr>
-        <p>
-            {{ object.body }}
-        </p>
-    </div>
+{% extends 'base.html' %} {% block content %}
+<div class="card">
+  <div class="card-body">
+    <h2>{{ object.title }}</h2>
+    <hr />
+    <p>{{ object.body }}</p>
+  </div>
 </div>
+<br />
+<a
+  href="{% url 'DeleteBlog' post.pk %}"
+  class="btn btn-primary btn-lg active"
+  role="button"
+  aria-pressed="true"
+  >Delete</a
+>
 
-<span><a href="{% url 'EditBlog' post.pk %}" >Edit This Blog</a></span>
+<a
+  href="{% url 'EditBlog' post.pk %}"
+  class="btn btn-primary btn-lg active"
+  role="button"
+  aria-pressed="true"
+  >Edit</a
+>
 {% endblock %}
