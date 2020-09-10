@@ -64,6 +64,15 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
+          {% if user.is_authenticated %}
+          <h4>Hi, {{ user.username }}.</h4> <a href="{% url 'logout' %}">Logout</a>
+          {% else %}
+          <h4> You Are Not Logged In !!!</h4>
+          {% endif %}
+        </div>
+      </div><br>
+      <div class="card">
+        <div class="card-body">
           <br />
           {% block content %} {% endblock %}
         </div>
